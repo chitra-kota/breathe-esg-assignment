@@ -10,12 +10,12 @@ function App() {
   }, []);
 
   const fetchRecords = async () => {
-    const res = await axios.get("http://127.0.0.1:8000/api/records/");
+    const res = await axios.get("https://breathe-esg-backend-0una.onrender.com/api/records/");
     setRecords(res.data);
   };
 
   const addSampleData = async () => {
-    await axios.post("http://127.0.0.1:8000/api/records/", {
+    await axios.post("https://breathe-esg-backend-0una.onrender.com/api/records/", {
       source: "SAP",
       activity: "Diesel Consumption",
       quantity: 500,
@@ -28,7 +28,7 @@ function App() {
     fetchRecords();
   };
   const updateStatus = async (id, status, record) => {
-  await axios.put(`http://127.0.0.1:8000/api/records/${id}/`, {
+  await axios.put(`https://breathe-esg-backend-0una.onrender.com/api/records/${id}/`, {
     ...record,
     status: status
   });
